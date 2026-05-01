@@ -3,8 +3,8 @@ services:
         autowire: true
         autoconfigure: true
 
-    BohnMedia\ContaoFlagIconsBundle\InsertTag\:
-        resource: '../src/InsertTag/'
-
-    BohnMedia\ContaoFlagIconsBundle\EventListener\:
-        resource: '../src/EventListener/'
+    BohnMedia\ContaoFlagIconsBundle\:
+        resource: '../src/'
+        exclude:
+            - '../src/BohnMediaContaoFlagIconsBundle.php'
+            - '../src/ContaoManager/'

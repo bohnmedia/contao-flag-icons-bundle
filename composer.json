@@ -1,0 +1,34 @@
+{
+    "name": "bohnmedia/contao-flag-icons-bundle",
+    "description": "Contao 5 InsertTag wrapper around lipis/flag-icons",
+    "type": "contao-bundle",
+    "license": "MIT",
+    "require": {
+        "php": "^8.2",
+        "contao/core-bundle": "^5.0",
+        "contao/manager-plugin": "^2.0",
+        "lipis/flag-icons": "^7.0",
+        "symfony/http-kernel": "^6.4 || ^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "BohnMedia\\ContaoFlagIconsBundle\\": "src/"
+        }
+    },
+    "extra": {
+        "contao-manager-plugin": "BohnMedia\\ContaoFlagIconsBundle\\ContaoManager\\Plugin"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "*",
+        "phpstan/extension-installer": "*",
+        "phpstan/phpstan-symfony": "*"
+    },
+    "config": {
+        "allow-plugins": {
+            "contao-components/installer": true,
+            "contao/manager-plugin": true,
+            "php-http/discovery": true,
+            "phpstan/extension-installer": true
+        }
+    }
+}

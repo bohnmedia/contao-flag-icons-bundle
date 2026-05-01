@@ -1,0 +1,10 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    BohnMedia\ContaoFlagIconsBundle\InsertTag\:
+        resource: '../src/InsertTag/'
+
+    BohnMedia\ContaoFlagIconsBundle\EventListener\:
+        resource: '../src/EventListener/'

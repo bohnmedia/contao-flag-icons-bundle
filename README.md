@@ -25,12 +25,6 @@ renders
      class="flag-icon flag-icon--de flag-icon--4x3">
 ```
 
-The `width` and `height` attributes are always emitted so the browser can
-reserve space via the intrinsic aspect ratio (no layout shift while the
-SVG loads). The default `width` is `40` for both ratios; only the `height`
-follows the ratio (`30` for `4x3`, `40` for `1x1`). Override via `size`
-or your own CSS.
-
 The `alt` attribute is the localised country name from Contao's `Countries`
 service — German in a German page context, English in an English one, etc.
 
@@ -39,7 +33,7 @@ service — German in a German page context, English in an English one, etc.
 | Parameter | Default | Description                                                                 |
 |-----------|---------|-----------------------------------------------------------------------------|
 | `ratio`   | `4x3`   | Aspect ratio of the SVG. Allowed values: `4x3`, `1x1`.                      |
-| `size`    | `40`    | Value for the `width` attribute. The `height` attribute is computed from the ratio (e.g. `size=24` on `4x3` → `width="24" height="18"`). |
+| `width`   | `40`    | Value for the `width` attribute. The `height` attribute is computed from the ratio (e.g. `width=24` on `4x3` → `width="24" height="18"`). |
 | `alt`     | —       | Override for the `alt` attribute. Pass an empty string for decorative use.  |
 
 ### Examples
@@ -47,7 +41,7 @@ service — German in a German page context, English in an English one, etc.
 ```text
 {{flag_icon::de}}
 {{flag_icon::de::ratio=1x1}}
-{{flag_icon::de::ratio=1x1::size=24}}
+{{flag_icon::de::ratio=1x1::width=24}}
 {{flag_icon::de::alt=Country name}}
 {{flag_icon::de::alt=}}
 ```

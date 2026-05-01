@@ -59,7 +59,7 @@ readonly class FlagIconInsertTag
 
         [$width, $height] = $this->resolveDimensions(
             $ratio,
-            $insertTag->getParameters()->getScalar('size'),
+            $insertTag->getParameters()->getScalar('width'),
         );
 
         $url = $this->packages->getUrl('assets/flag-icons/' . $ratio . '/' . $code . '.svg');
@@ -84,16 +84,16 @@ readonly class FlagIconInsertTag
     /**
      * @return array{0: int, 1: int}
      */
-    private function resolveDimensions(string $ratio, float|int|string|null $size): array
+    private function resolveDimensions(string $ratio, float|int|string|null $width): array
     {
         $defaults = self::RATIO_DIMENSIONS[$ratio];
 
-        if (!\is_int($size) || $size <= 0) {
+        if (!\is_int($width) || $width <= 0) {
             return [$defaults['width'], $defaults['height']];
         }
 
-        $height = (int) round($size * $defaults['height'] / $defaults['width']);
+        $height = (int) round($width * $defaults['height'] / $defaults['width']);
 
-        return [$size, $height];
+        return [$width, $height];
     }
 }

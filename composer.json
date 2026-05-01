@@ -1,6 +1,6 @@
 {
     "name": "bohnmedia/contao-flag-icons-bundle",
-    "description": "Contao 5 InsertTag wrapper around lipis/flag-icons",
+    "description": "Contao 5 wrapper around lipis/flag-icons — render country flags via insert tag or Twig function.",
     "type": "contao-bundle",
     "license": "MIT",
     "require": {

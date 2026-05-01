@@ -1,29 +1,13 @@
 # Contao Flag Icons Bundle
 
 A small Contao 5 wrapper around [lipis/flag-icons][flag-icons]. It exposes a
-single insert tag that renders country flags as `<img>` tags. SVGs are served
-directly by the web server via a symlink — no controller, no asset copy, no
-build step.
+single insert tag that renders country flags as `<img>` tags.
 
 ## Installation
 
 ```bash
 composer require bohnmedia/contao-flag-icons-bundle
 ```
-
-On the next `contao:install` (or `contao:symlinks`), Contao will create a
-symlink:
-
-```
-assets/flag-icons → vendor/lipis/flag-icons/flags
-```
-
-Combined with Contao's existing `public/assets → assets` symlink, the SVGs
-become available under `/assets/flag-icons/<ratio>/<code>.svg`.
-
-This is registered through Contao's `GenerateSymlinksEvent`, so updates to
-the upstream library happen via plain `composer update` and take effect
-immediately — no copy, no build.
 
 ## Usage
 

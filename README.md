@@ -19,7 +19,7 @@ renders
 
 ```html
 <img src="/assets/flag-icons/4x3/de.svg"
-     alt="Deutschland"
+     alt="Germany"
      width="40"
      height="30"
      class="flag-icon flag-icon--de flag-icon--4x3">
@@ -48,7 +48,7 @@ service — German in a German page context, English in an English one, etc.
 {{flag_icon::de}}
 {{flag_icon::de::ratio=1x1}}
 {{flag_icon::de::ratio=1x1::size=24}}
-{{flag_icon::de::alt=Mein Land}}
+{{flag_icon::de::alt=Country name}}
 {{flag_icon::de::alt=}}
 ```
 

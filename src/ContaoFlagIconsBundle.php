@@ -8,7 +8,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 
-class BohnMediaContaoFlagIconsBundle extends AbstractBundle
+class ContaoFlagIconsBundle extends AbstractBundle
 {
     /**
      * @param array<string, mixed> $config

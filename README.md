@@ -20,7 +20,7 @@ composer require bohnmedia/contao-flag-icons-bundle
 renders
 
 ```html
-<img src="/assets/flag-icons/4x3/de.svg"
+<img src="data:image/svg+xml;utf8,…"
      alt="Germany"
      width="40"
      height="30"

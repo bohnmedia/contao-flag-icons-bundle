@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace BohnMedia\ContaoFlagIconsBundle;
 
 use Contao\CoreBundle\Intl\Countries;
-use Symfony\Component\Asset\Packages;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 
 readonly class FlagIconRenderer
@@ -17,9 +16,18 @@ readonly class FlagIconRenderer
         '1x1' => ['width' => 40, 'height' => 40],
     ];
 
+    private const URI_ENCODE_MAP = [
+        '%' => '%25',
+        '#' => '%23',
+        '<' => '%3C',
+        '>' => '%3E',
+        '"' => '%22',
+        "'" => '%27',
+        '&' => '%26',
+    ];
+
     public function __construct(
         private Countries $countries,
-        private Packages $packages,
         #[Autowire(param: 'kernel.project_dir')]
         private string $projectDir,
     ) {
@@ -38,8 +46,13 @@ readonly class FlagIconRenderer
             $ratio = self::DEFAULT_RATIO;
         }
 
-        $svgPath = $this->projectDir . '/vendor/lipis/flag-icons/flags/' . $ratio . '/' . $code . '.svg';
+        $svgPath = $this->projectDir.'/vendor/lipis/flag-icons/flags/'.$ratio.'/'.$code.'.svg';
         if (!is_file($svgPath)) {
+            return '';
+        }
+
+        $svg = file_get_contents($svgPath);
+        if (false === $svg) {
             return '';
         }
 
@@ -49,10 +62,10 @@ readonly class FlagIconRenderer
 
         [$resolvedWidth, $resolvedHeight] = $this->resolveDimensions($ratio, $width);
 
-        $url = $this->packages->getUrl('assets/flag-icons/' . $ratio . '/' . $code . '.svg');
+        $dataUri = 'data:image/svg+xml;utf8,'.strtr($svg, self::URI_ENCODE_MAP);
 
         $attributes = [
-            'src' => $url,
+            'src' => $dataUri,
             'alt' => $alt,
             'width' => (string) $resolvedWidth,
             'height' => (string) $resolvedHeight,

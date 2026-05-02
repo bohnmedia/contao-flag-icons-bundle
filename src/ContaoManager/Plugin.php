@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace BohnMedia\ContaoFlagIconsBundle\ContaoManager;
 
-use BohnMedia\ContaoFlagIconsBundle\BohnMediaContaoFlagIconsBundle;
+use BohnMedia\ContaoFlagIconsBundle\ContaoFlagIconsBundle;
 use Contao\CoreBundle\ContaoCoreBundle;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
@@ -15,7 +15,7 @@ class Plugin implements BundlePluginInterface
     public function getBundles(ParserInterface $parser): array
     {
         return [
-            BundleConfig::create(BohnMediaContaoFlagIconsBundle::class)
+            BundleConfig::create(ContaoFlagIconsBundle::class)
                 ->setLoadAfter([ContaoCoreBundle::class]),
         ];
     }

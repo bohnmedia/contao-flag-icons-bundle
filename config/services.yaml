@@ -6,5 +6,5 @@ services:
     BohnMedia\ContaoFlagIconsBundle\:
         resource: '../src/'
         exclude:
-            - '../src/BohnMediaContaoFlagIconsBundle.php'
+            - '../src/ContaoFlagIconsBundle.php'
             - '../src/ContaoManager/'
